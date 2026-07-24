@@ -114,6 +114,7 @@ class GameState:
         self.hun_tile, self.hun_indicator = determine_hun(self.deck, dice_sum)
         print(f"定混: {self.hun_tile.display()}  庄家: {config.PLAYER_NAMES[dealer]} (骰子: {dice_sum})")
         self.current_player = dealer
+        self.just_drew = True  # 庄家多摸一张，允许暗杠
         self.phase = GamePhase.DISCARD
         self.notify_state_change()
 
